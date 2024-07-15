@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Workout live feedback</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="line-graph-component.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- fitness video -->
+      <a-video
+        src="https://cdn.glitch.me/35a78220-981d-41b3-85c7-7012f19b495e/HIIT%20Home%20Workout%20for%20beginners.mp4?v=1720564015108"
+        position="0 0 -10"
+        rotation="0 0 0"
+        width="16"
+        height="9"
+      ></a-video>
+
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-camera>
+        <!-- graph -->
+        <a-entity id="graphWindow" position="0.1 -1 -2">
+          <a-plane
+            id="background"
+            width="1.3"
+            height=".7"
+            color="#ababab"
+            opacity="0.4"
+          ></a-plane>
+          <a-entity
+            id="lineGraph"
+            line-graph="width: .7; height: .4; color: #000000; startFrom: 240"
+            position="-.35 -.15 0.01"
+          ></a-entity>
+        </a-entity>
+      </a-camera>
+    </a-scene>
+
+    <script src="main.js"></script>
+  </body>
+</html>
