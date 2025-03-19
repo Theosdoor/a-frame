@@ -2,9 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Workout lactase</title>
+    <title>Glucose VR Gym</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="glucose-component.js"></script>
+    <style>
+      /* Additional styling for the page */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      .demo-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        z-index: 100;
+      }
+      
+      .demo-controls button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+    </style>
   </head>
   <body>
     <a-scene>
@@ -15,9 +41,11 @@
         rotation="0 0 0"
         width="16"
         height="9"
-        muted="true">
+        muted="true"
+        autoplay="true"
+        loop="true">
       </a-video>
-
+      
       <!-- Video title -->
       <a-text
         value="from TIFF X DAN @ YouTube"
@@ -28,26 +56,29 @@
         color="#FFFFFF"
         wrap-count="40">
       </a-text>
-
+      
+      <!-- Environment -->
       <a-sky color="#ADD8E6"></a-sky>
-
+      
+      <!-- Camera and glucose monitor -->
       <a-camera position="0 -2 0">
-        <a-entity id="glucoseMonitor" 
-            glucose-monitor="value: 18.0; threshold: 20.0"
-            position="0.1 -1 -2">
-        </a-entity>
-        <a-entity id="window" position="0.1 -1 -2">
-          <a-plane
-            id="background"
-            width="1.3"
-            height=".7"
-            color="#ababab"
-            opacity="0.4">
-          </a-plane>
+        <a-entity 
+            id="glucoseMonitor"
+            position="0.1 -1 -2" 
+            glucose-monitor="status: initializing; value: 0.13; minHealthy: 0.12; maxHealthy: 0.15">
         </a-entity>
       </a-camera>
     </a-scene>
-
+    
+    <!-- Demo controls (outside of A-Frame) -->
+    <div class="demo-controls">
+      <h3>Glucose Monitor Demo Controls</h3>
+      <button id="lowGlucose">Simulate Low Glucose</button>
+      <button id="normalGlucose">Simulate Normal Glucose</button>
+      <button id="highGlucose">Simulate High Glucose</button>
+      <button id="toggleConnection">Toggle Connection</button>
+    </div>
+    
     <script src="main.js"></script>
   </body>
 </html>
