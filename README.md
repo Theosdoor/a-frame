@@ -1,8 +1,8 @@
 # VR Glucose Monitor Simulation
 
 This project is a proof of concept for a VR simulation that displays real-time glucose levels while a user is exercising in a virtual environment. It uses A-Frame to create a VR experience with a floating glucose monitor that updates automatically.
+Built with [A-Frame](https://aframe.io), a web framework for building virtual reality experiences.
 
-## Features
 
 - Real-time glucose monitoring display in VR
 - Visual feedback for glucose levels outside the healthy range
@@ -62,3 +62,4 @@ The glucose monitor is implemented as an A-Frame component (`glucose-monitor`) t
 
 - A modern web browser with WebVR support
 - A-Frame 1.6.0 or higher
+
