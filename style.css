@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.monitor {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.status,
+.healthy-range {
+  font-size: 14px;
+  color: #666;
+}
+.glucose-level {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+.healthy-range {
+  margin-bottom: 20px;
+}
+.refresh-button {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.notification {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: orange;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  transition: top 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.arrow-down {
+  border-top: 15px solid red;
+}
+.arrow-up {
+  border-bottom: 15px solid red;
+}
