@@ -5,7 +5,7 @@ AFRAME.registerComponent("line-graph", {
     height: { type: "number", default: 1 },
     color: { type: "color", default: "#FFFFFF" },
     xrange: { type: "number", default: 300 },
-    startFrom: { type: "number", default: 1 },
+    startFrom: { type: "number", default: 0 },
   },
 
   init() {
@@ -87,11 +87,11 @@ updateBounds() {
 startAnimation() {
   clearInterval(this.intervalId);
   this.intervalId = setInterval(() => {
-    this.currentT += 1; // move time forward by 1 second
     if (this.currentDataIndex < this.data.parsedData.length) {
       this.addNewDataPoint();
       this.updateBounds();
       this.draw();
+      this.currentT += 1; // move time forward by 1 second
 
       // Check if currentT is 480 and notification hasn't been shown
       if (this.currentT === 480 && !this.notificationShown) {
