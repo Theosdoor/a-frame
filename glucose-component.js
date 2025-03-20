@@ -20,7 +20,7 @@ AFRAME.registerComponent('glucose-monitor', {
     });
     backgroundPlane.setAttribute('material', {
       color: '#ffffff',
-      opacity: 0.95,
+      opacity: 0.4,
       shader: 'flat'
     });
     backgroundPlane.setAttribute('position', '0 0 0.01');
